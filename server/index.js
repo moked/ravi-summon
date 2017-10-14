@@ -62,13 +62,9 @@ wsServer.on('request', function (request) {
                 });
             } else if (msg.startsWith("buzz")) {
 
-                console.log("innn");
-
                 connections.forEach(function (conn) {
                     var res = msg.split("-");
-
                     var pos = parseInt(res[1]) - 1;
-
                     conn.sendUTF(pos);
                 });
             }
