@@ -1,0 +1,6 @@
+server/node_modules/
+server/public/bower_components/
+.idea/
+etc/
+npm-debug.log
+**/.DS_Store

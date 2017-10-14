@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="public/bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="public/bower_components/jquery/dist/jquery.js"></script>
+    <script src="public/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script>
+        var num = null;
+        $(document).ready(function () {
+            $(".btn-group-lg > button.btn").on("click", function () {
+                    num = +this.innerHTML;
+                }
+            )
+        });
+        var connection = new WebSocket('ws://192.168.100.69:3000', ['arduino']);
+
+        connection.onopen = function () {
+            connection.send('Message from Browser to ESP8266 yay its Working!! ' + new Date());
+            connection.send('ping');
+            connection.send('Time: ' + new Date());
+        };
+
+        connection.onerror = function (error) {
+            console.log('WebSocket Error ', error);
+        };
+
+        connection.onmessage = function (e) {
+            console.log('Server: ', e.data);
+            console.log("ravi is comming");
+        };
+
+        function summonRavi() {
+            console.log(num);
+            connection.send("buzz-" + num);
+        }
+
+    </script>
+</head>
+
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-3">Summon <b>RAVI</b></h1>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center">
+            <div id="g1" class="btn-group-lg" role="group" aria-label="row-02">
+                <button type="button" class="btn btn-default">4</button>
+                <button type="button" class="btn btn-default">5</button>
+                <button type="button" class="btn btn-default">6</button>
+            </div>
+            <br/>
+            <div class="btn-group-lg" role="group" aria-label="row-01">
+                <button type="button" class="btn btn-default">3</button>
+                <button type="button" class="btn btn-default">2</button>
+                <button type="button" class="btn btn-default">1</button>
+            </div>
+            <br/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <button class="btn btn-primary btn-lg" id="summon" type="button" onclick="summonRavi()">Summon
+            </button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

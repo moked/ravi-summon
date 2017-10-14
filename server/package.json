@@ -1,0 +1,29 @@
+{
+  "name": "Ravi_summon_server",
+  "version": "1.0.0",
+  "description": "Ravi Summon Device",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moked/ravi-summon"
+  },
+  "keywords": [
+    "esp8266",
+    "websocket",
+    "arduino"
+  ],
+  "author": "Moked Mj",
+  "license": "LGPLv2",
+  "bugs": {
+    "url": "https://github.com/moked/ravi-summon/issues"
+  },
+  "homepage": "https://github.com/moked/ravi-summon",
+  "dependencies": {
+    "express": "^4.16.2",
+    "request": "^2.81.0",
+    "websocket": "^1.0.24"
+  }
+}

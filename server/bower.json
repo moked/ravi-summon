@@ -1,0 +1,26 @@
+{
+  "name": "Ravi_summon_server",
+  "description": "Ravi Summon Device",
+  "main": "index.js",
+  "authors": [
+    "Moked Mj"
+  ],
+  "license": "LGPLv2",
+  "keywords": [
+    "esp8266",
+    "websocket",
+    "arduino"
+  ],
+  "homepage": "https://github.com/moked/ravi-summon",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}
