@@ -4,3 +4,4 @@ server/public/bower_components/
 etc/
 npm-debug.log
 **/.DS_Store
+ino/
